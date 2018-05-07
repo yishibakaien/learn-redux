@@ -1,6 +1,17 @@
 import React from 'react';
 import RouterMap from './router/router.js';
+import {Provider} from 'react-redux';
 
-const App = () => <RouterMap />;
+import makeStore from './store/store.js';
+
+const store = makeStore();
+
+const App = () => {
+  return (
+    <Provider store={store}>
+      <RouterMap />
+    </Provider>
+  );
+}
 
 export default App;
