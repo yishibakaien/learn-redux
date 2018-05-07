@@ -9,11 +9,14 @@ import * as goodsActions from '../../actions/goods.js';
 class Home extends Component {
 
   addApple = () => {
-    return this.props.goodsActions.add()
+    this.props.goodsActions.add()
   }
 
   decApple = () => {
-    return this.props.goodsActions.dec()
+    this.props.goodsActions.dec()
+  }
+  asyncAddApple = () => {
+    this.props.goodsActions.asyncAdd()
   }
   render() {
     return (
@@ -23,6 +26,8 @@ class Home extends Component {
           <button onClick={this.addApple.bind(this)}> add 1 </button>
           <br/>
           <button onClick={this.decApple.bind(this)}> dec 1 </button>
+          <br />
+          <button onClick={this.asyncAddApple.bind(this)}> asycn add 1 </button>
         </div>
       </div>
     );
